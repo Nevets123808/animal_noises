@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  api:
+    build: ./animal_api
+    container_name: api
+    image: stevenbourn/animal-api
+    ports:
+    - target: 5000
+      published: 5001
+      protocol: tcp
+  server:
+    build: ./server
+    container_name: server
+    image: stevenbourn/server
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
