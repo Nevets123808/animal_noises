@@ -1,14 +1,15 @@
 from flask import Flask, jsonify, request
-from random import choice
+import random
+
 
 
 app = Flask(__name__)
+
 animals = {"pig":"oink", "cow":"moo", "sheep":"baa"}
 # animal generator route here
 @app.route("/getanimal")
 def get_animal():
-    animal = choice(list(animals.keys()))
-    print(animal)
+    animal = random.choice(list(animals.keys()))
     return jsonify({"data": animal})
 
 @app.route("/getnoise", methods = ["POST"])

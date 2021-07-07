@@ -16,3 +16,6 @@ services:
     - target: 5000
       published: 5000
       protocol: tcp
+    environment:
+      DATABASE_URI: "mysql+pymysql://root:badpassword@35.197.228.206:3306/animal"
+    
